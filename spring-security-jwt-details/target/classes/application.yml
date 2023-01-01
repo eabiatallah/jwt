@@ -1,0 +1,27 @@
+jwt:
+  secret: javainuse
+  expirationDateInMs: 60000
+  refreshExpirationDateInMs: 9000000
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/usmdba2?createDatabaseIfNotExist=true&useSSL=false  
+    password: root
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: false
+    show-sql: true   
+    
+server:
+  port: 8083
+  servlet:
+    context-path: /userService
+  
+allowed:
+  origins: /authenticate, /register, /verifyRegistration
+      
